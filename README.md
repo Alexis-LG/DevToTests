@@ -22,4 +22,6 @@ An IDE: I use [PyCharm](https://www.jetbrains.com/pycharm/), but any Python-capa
 
 [Pytruth](https://github.com/google/pytruth): It's an assertion library translated from the Java implementation of Google Truth which allows you to make assertions in a fluent style. I recommend it. Unfortunately, as far as I know, there is not a pip package of this dependency, so you'll have to clone the repo and move it to the project folder.
 
-## Troubleshooting
+## Running the tests
+
+To run the tests, you'll have to activate the virtual environment running the ``activate.bat`` file, and then type in the terminal ``pytest --driver Chrome``
