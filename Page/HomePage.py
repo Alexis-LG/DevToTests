@@ -20,3 +20,7 @@ class HomePage(BasePage):
     def search_for(self, query):
         self.browser.find_element(By.XPATH, "//input[@placeholder='search']").send_keys(query, Keys.ENTER)
         Wait(self.browser, self.timeout).until(expected_conditions.url_contains("https://dev.to/search?q="))
+
+    def get_key_links(self):
+        key_links = self.browser.find_elements(By.XPATH, "(//header[contains(text(), 'key links')]/../div)[1]/a")
+        return key_links
