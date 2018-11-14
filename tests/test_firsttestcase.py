@@ -26,3 +26,9 @@ def test_can_user_visit_social_links(browser, homepage):
         AssertThat(expected_links.__contains__(browser.current_url))
         browser.close()
         browser.switch_to.window(browser.window_handles[0])
+
+
+def test_can_check_user_profile(homepage, searchpage, profilepage):
+    homepage.search_for("Ben Halpern")
+    searchpage.select_first_result()
+    AssertThat(profilepage.is_visible()).IsTrue()
