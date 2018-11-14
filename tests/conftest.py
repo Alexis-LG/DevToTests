@@ -13,9 +13,6 @@ from Page.SearchPage import SearchPage
 def browser():
     with webdriver.Chrome() as browser:
         print("Creating a Chrome Browser Instance")
-        homepage = HomePage(browser)
-        searchpage = SearchPage(browser)
-        postpage = PostPage(browser)
         browser.maximize_window()
         browser.get("https://dev.to/")
         print("Opening " + browser.current_url)
