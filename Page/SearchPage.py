@@ -1,6 +1,6 @@
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait as Wait
-from selenium.webdriver.common.by import By
 
 from Page.BasePage import BasePage
 
@@ -15,3 +15,4 @@ class SearchPage(BasePage):
             expected_conditions.element_to_be_clickable((By.XPATH, "//div[contains(@class, 'single-article')][1]//h3")))
         btn.click()
         Wait(self.browser, self.timeout).until(expected_conditions.url_changes(self.browser.current_url))
+        pass
