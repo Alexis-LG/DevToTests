@@ -37,3 +37,10 @@ def test_can_check_user_profile(homepage, searchpage, profilepage):
 def test_can_sort_feed_by_latest(homepage):
     homepage.filter_posts_by_latest()
     AssertThat(homepage.is_latest_feed_visible()).IsTrue()
+
+
+def test_can_access_hashtags(homepage, hashtagfeedpage):
+    homepage.filter_by_hashtag("python")
+    AssertThat(hashtagfeedpage.is_title_visible()).IsTrue()
+    for tag in hashtagfeedpage.get_feed_filtered_by_hashtag("python"):
+        AssertThat(tag.is_displayed()).IsTrue()
