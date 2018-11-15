@@ -11,8 +11,8 @@ class SearchPage(BasePage):
         self.browser = browser
 
     def select_first_result(self):
-        btn = Wait(self.browser, self.timeout).until(
+        post = Wait(self.browser, self.timeout).until(
             expected_conditions.element_to_be_clickable((By.XPATH, "//div[contains(@class, 'single-article')][1]//h3")))
-        btn.click()
+        post.click()
         Wait(self.browser, self.timeout).until(expected_conditions.url_changes(self.browser.current_url))
         pass

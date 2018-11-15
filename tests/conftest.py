@@ -3,6 +3,7 @@ import pytest
 from chromedriver_binary.utils import get_chromedriver_filename
 from selenium import webdriver
 
+from Page.HashtagFeedPage import HashtagFeedPage
 from Page.HomePage import HomePage
 from Page.PostPage import PostPage
 from Page.ProfilePage import ProfilePage
@@ -37,3 +38,8 @@ def postpage(browser):
 @pytest.fixture()
 def profilepage(browser):
     return ProfilePage(browser)
+
+
+@pytest.fixture()
+def hashtagfeedpage(browser):
+    return HashtagFeedPage(browser)
