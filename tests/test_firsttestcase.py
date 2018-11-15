@@ -32,3 +32,8 @@ def test_can_check_user_profile(homepage, searchpage, profilepage):
     homepage.search_for("Ben Halpern")
     searchpage.select_first_result()
     AssertThat(profilepage.is_visible()).IsTrue()
+
+
+def test_can_sort_feed_by_latest(homepage):
+    homepage.filter_posts_by_latest()
+    AssertThat(homepage.is_latest_feed_visible()).IsTrue()
