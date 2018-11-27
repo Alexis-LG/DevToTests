@@ -2,15 +2,18 @@
 
 from pytruth.truth.truth import AssertThat
 
+from Utils.Screenshot_Utils import take_screenshot
+
 
 def test_is_user_in_website(homepage):
     AssertThat(homepage.is_visible()).IsTrue()
 
 
-def test_can_user_search_for_posts(homepage, searchpage, postpage):
+def test_can_user_search_for_posts(browser, homepage, searchpage, postpage):
     homepage.search_for("must have extensions")
     searchpage.select_first_result()
     AssertThat(postpage.is_readable()).IsTrue()
+    take_screenshot(browser)
 
 
 def test_can_user_visit_social_links(browser, homepage):
