@@ -48,5 +48,5 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            pip install -r requirements/requirements.txt
+            pip install -r requirements.txt
             py.test -v
