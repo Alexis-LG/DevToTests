@@ -1,0 +1,4 @@
+chromedriver_binary.utils
+pytest==3.2.5
+allure-pytest==2.2.3b1
+selenium==3.7.0
