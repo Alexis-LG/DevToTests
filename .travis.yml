@@ -1,5 +1,8 @@
 language: python
 before_script:
   pip install chromedriver-binary
+  pip install git+https://github.com/google/pytruth
+  pip install selenium
+  pip install pytest
 script:
   - pytest
